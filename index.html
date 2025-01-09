@@ -23,10 +23,14 @@
 
   .nav {
     position: fixed;
+    flex-direction: row;
     z-index: 100;
-    right: 20px;
-    top: 10px;
+    left: 0;
+    top: 0;
     display: flex;
+    overflow: auto;
+    padding: 10px;
+    width: calc(100% - 20px);
   }
   .nav li {
     list-style: none;
@@ -137,6 +141,7 @@
       -webkit-order: 1;
       order: 1;
     }
+    .nav { flex-direction: column; }
 
     @supports ((perspective: 1px) and (not (-webkit-overflow-scrolling: touch))) {
 
