@@ -95,15 +95,25 @@
         position: fixed;
         width: 100%;
         bottom: 0;
-        text-align: center;
-        background: rgba(255,255,255,.5);
+        display: flex;
+        background: rgba(255, 255, 255, .9);
         padding: 0.5em;
         z-index: 100;
         font-size: 16px;
-        a {
-          color: black;
-          text-decoration: none;
-          cursor: pointer;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        span {
+          &.divider {
+            display: none;
+          }
+          a {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+          }
         }
       }
 
@@ -118,7 +128,16 @@
       }
 
       @media screen and (min-width: 45em) {
-        
+
+        .demo-info {
+          flex-direction: row;
+          span {
+            &.divider {
+              display: flex;
+            }
+          }
+        }
+
         .nav { flex-direction: column; width: 67px; left: unset; right: 0; height: calc(100% - 20px); }
         .slide:nth-child(2n) .slide-image {
             transform: translateX(75px) translateZ(100px) scale(.9);
@@ -278,7 +297,11 @@
 
 <body>
   <div class="demo-info">
-    Jure Matoh, Črna pri Kamniku 12, 1242 Stahovica | <a href="tel:+38640893141">040 893 141</a> | <a href="mailto:matohjure@hotmail.com">matohjure@hotmail.com</a> 
+    <span>Jure Matoh, Črna pri Kamniku 12, 1242 Stahovica</span>
+    <span class="divider">|</span>
+    <span><a href="tel:+38640893141">040 893 141</a></span>
+    <span class="divider">|</span>
+    <span><a href="mailto:matohjure@hotmail.com">matohjure@hotmail.com</a></span>
   </div>
 
   <nav>
