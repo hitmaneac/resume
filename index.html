@@ -21,7 +21,6 @@
     margin-bottom: 1.5em;
   }
 
-
   .nav {
     position: fixed;
     flex-direction: row;
@@ -50,16 +49,9 @@
   .nav a:not(:hover) { text-decoration: none; }
 
   .slide {
-    position: relative;
-    padding: 8% 0;
-  }
-  .slide-content {
-    max-width: 1200px;
-    margin: auto;
-  }
-  .slide-text, .slide-image {
-    padding: 8%;
-  }
+    position: relative; padding: 8% 0; }
+  .slide-content { max-width: 1200px; margin: auto; }
+  .slide-text, .slide-image { padding: 8%; }
   .slide-bg {
     position: absolute;
     top: 0;
@@ -69,9 +61,6 @@
     z-index: -1;
     -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
     mask-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1), rgba(0,0,0,0));
-  }
-
-  .slide-bg {
     width: 100%;
     height: 800px;
     background-size: cover;
@@ -126,32 +115,15 @@
   }
 
   @media screen and (min-width: 45em) {
-
-    .slide-content {
-      display: -webkit-flex;
-      display: flex;
-      align-items: center;
-    }
-    .slide-image, .slide-text {
-      padding: 3%;
-      -webkit-flex: 1;
-      flex: 1;
-    } 
-    .slide:nth-child(2n) .slide-text {
-      -webkit-order: 1;
-      order: 1;
-    }
-    .nav { flex-direction: column; width: 67px; left: unset; right: 0; }
+    .slide-content { display: flex; align-items: center; }
+    .slide-image, .slide-text { padding: 3%; flex: 1; }
+    .slide:nth-child(2n) .slide-text { order: 1; }
+    .nav { flex-direction: column; width: 67px; left: unset; right: 0; height: calc(100% - 20px); }
 
     @supports ((perspective: 1px) and (not (-webkit-overflow-scrolling: touch))) {
 
-      html, body {
-        overflow: hidden;
-        height: 100%;
-      }
-      body {
-        transform: translateZ(0px);
-      }
+      html, body { overflow: hidden; height: 100%; }
+      body { transform: translateZ(0px); }
       .slides {
         position: absolute;
         width: 100%;
